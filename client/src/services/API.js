@@ -17,6 +17,14 @@ class API extends BaseAPI {
         return res;
     }
 
+    async getDetailProduct(id) {
+        const res = await this.apiCall({
+            url: `products/${id}`,
+            method: 'GET'
+        });
+        return res;
+    }
+
     // async CreateCategory(param) {
     //     const res = await this.apiCall({
     //         url: 'categories/create',

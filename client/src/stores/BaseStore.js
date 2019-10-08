@@ -9,6 +9,8 @@ class BaseStore {
 
     AllProduct = [];
 
+    DetailProduct = {};
+
     async getAllCategoryStore() {
         this.loading = true;
         autorun(async () => {
@@ -35,6 +37,19 @@ class BaseStore {
         })
     }
 
+    async getDetailProduct(id) {
+        this.loading = true;
+        autorun(async () => {
+            return await API.getDetailProduct(id)
+                .then(res => {
+                    this.DetailProduct = res;
+                })
+                .catch(e => {
+                    console.log(e)
+                })
+        })
+    }
+
 }
 
 decorate(BaseStore, {
@@ -42,7 +57,9 @@ decorate(BaseStore, {
     error: observable,
     AllCategory: observable,
     getAllCategoryStore: action,
-    AllProduct: observable
+    AllProduct: observable,
+    DetailProduct: observable,
+    getDetailProduct: action,
 });
 
 export default new BaseStore();
