@@ -3,34 +3,46 @@ import {inject, observer} from "mobx-react";
 import {withRouter} from 'react-router-dom';
 import {toJS} from "mobx";
 import {Card, Col, Row} from "antd";
+import {Router, Switch, Route, Link} from 'react-router-dom';
+import NewProductPage from "./NewProductPage";
+import {createBrowserHistory} from "history";
+import DetailCategory from "./DetailCategory";
 
-const {Meta} = Card;
+const history = createBrowserHistory();
 
 class HomePage extends Component {
     async componentDidMount(): void {
         this.props.BaseStore.getAllProductStore();
+        this.props.BaseStore.getAllCategoryStore();
     }
 
     render() {
-        const dataProduct = toJS(this.props.BaseStore.AllProduct);
+        const dataCate = toJS(this.props.BaseStore.AllCategory);
+        console.log(dataCate)
         return (
-            <Row>
-                {dataProduct.map((i, index) => (
-                    <Col sm={3}>
-                        <Card
-                            onClick={() => {
-                                this.props.history.push(`/detail/${i._id}`)
-                            }}
-                            key={index}
-                            hoverable
-                            style={{width: '100%'}}
-                        >
-                            <Meta title={i.name} description={i.description}/>
-                        </Card>
+            <Router history={history}>
+                <Row>
+                    <Col sm={4}>
+                        <div>
+                            <ul>
+                                {dataCate.map((i, index) => (
+                                    <li key={index}>
+                                        <Link to={`/${i._id}/category/`}>
+                                            {i.name}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </Col>
-                ))}
-
-            </Row>
+                    <Col sm={8}>
+                        <Switch>
+                            <Route path='/new-product/' component={NewProductPage}/>
+                            <Route path='/:category_id/category/' component={DetailCategory}/>
+                        </Switch>
+                    </Col>
+                </Row>
+            </Router>
         );
     }
 }
