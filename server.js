@@ -1,14 +1,14 @@
-// Complete Ecommerce Application
 const express = require('express');
 const app = express();
-const mongoose =require('mongoose');
+const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const passport = require('passport');
 const cors = require('cors');
 const path = require('path');
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, './public/uploads')));
+app.use('/public', express.static('public'));
 
 app.use(cors()); // enabling all cors
 // app.use(function (req, res, next) {
@@ -19,19 +19,19 @@ app.use(cors()); // enabling all cors
 //     next();
 // });
 
-app.all('*', function(req, res, next) {
+app.all('*', function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     next();
 });
 
 // connect to mongodb
-mongoose.connect('mongodb://user:0989744720p@ds133762.mlab.com:33762/share_car_fs', { useNewUrlParser: true})
-        .then(() => console.log('DB Connected'))
-        .catch(err => console.log(err));
+mongoose.connect('mongodb://nhattrung:0989744720p@ds061454.mlab.com:61454/shopnhattrung', {useNewUrlParser: true})
+    .then(() => console.log('DB Connected'))
+    .catch(err => console.log(err));
 
 // add body-parser and cookie parser middleware
-app.use(bodyParser.urlencoded({ extended: true}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
