@@ -30,7 +30,6 @@ function App() {
                 <Switch>
                     <Route path='/login' exact={true} component={LoginPage}/>
                     <Route path='/' exact={true} component={HomePage}/>
-                    <Route path='/detail/:id' exact={true} component={DetailPage}/>
                     <PrivateRoute path='/admin' exact={true} component={AdminPage}/>
                 </Switch>
             </Router>

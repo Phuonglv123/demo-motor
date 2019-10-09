@@ -6,6 +6,7 @@ import {Col, Row} from "antd";
 import NewProductPage from "./NewProductPage";
 import {createBrowserHistory} from "history";
 import DetailCategory from "./DetailCategory";
+import DetailPage from "../DetailPage";
 
 const history = createBrowserHistory();
 
@@ -42,6 +43,7 @@ class HomePage extends Component {
                         <Switch>
                             <Route path='/' exact={true} component={NewProductPage}/>
                             <Route path='/:category_id/category/' exact={true} component={DetailCategory}/>
+                            <Route path='/detail/:id' exact={true} component={DetailPage}/>
                         </Switch>
                     </Col>
                 </Row>
