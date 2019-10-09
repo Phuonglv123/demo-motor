@@ -9,7 +9,8 @@ class BaseStore {
 
     AllProduct = [];
 
-    DetailProduct = {};
+    DetailProduct = [];
+    DetailCategory = [];
 
     async getAllCategoryStore() {
         this.loading = true;
@@ -19,7 +20,7 @@ class BaseStore {
                     this.AllCategory = res;
                 })
                 .catch(e => {
-                    console.log(e)
+                    this.error = e;
                 })
         })
     }
@@ -32,7 +33,20 @@ class BaseStore {
                     this.AllProduct = res;
                 })
                 .catch(e => {
-                    console.log(e)
+                    this.error = e;
+                })
+        })
+    }
+
+    async getDetailCategory(id) {
+        this.loading = true;
+        autorun(async () => {
+            return await API.getDetailCategory(id)
+                .then(res => {
+                    this.DetailCategory = res;
+                })
+                .catch(e => {
+                    this.error = e
                 })
         })
     }
@@ -45,7 +59,7 @@ class BaseStore {
                     this.DetailProduct = res;
                 })
                 .catch(e => {
-                    console.log(e)
+                    this.error = e;
                 })
         })
     }
@@ -59,6 +73,7 @@ decorate(BaseStore, {
     getAllCategoryStore: action,
     AllProduct: observable,
     DetailProduct: observable,
+    DetailCategory: observable,
     getDetailProduct: action,
 });
 

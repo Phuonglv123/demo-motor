@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import {inject, observer} from "mobx-react";
-import {withRouter} from 'react-router-dom';
+import {Link, Route, Router, Switch, withRouter} from 'react-router-dom';
 import {toJS} from "mobx";
-import {Card, Col, Row} from "antd";
-import {Router, Switch, Route, Link} from 'react-router-dom';
+import {Col, Row} from "antd";
 import NewProductPage from "./NewProductPage";
 import {createBrowserHistory} from "history";
 import DetailCategory from "./DetailCategory";
@@ -18,13 +17,17 @@ class HomePage extends Component {
 
     render() {
         const dataCate = toJS(this.props.BaseStore.AllCategory);
-        console.log(dataCate)
         return (
             <Router history={history}>
                 <Row>
                     <Col sm={4}>
                         <div>
                             <ul>
+                                <li>
+                                    <Link to='/'>
+                                        All
+                                    </Link>
+                                </li>
                                 {dataCate.map((i, index) => (
                                     <li key={index}>
                                         <Link to={`/${i._id}/category/`}>
@@ -37,8 +40,8 @@ class HomePage extends Component {
                     </Col>
                     <Col sm={8}>
                         <Switch>
-                            <Route path='/new-product/' component={NewProductPage}/>
-                            <Route path='/:category_id/category/' component={DetailCategory}/>
+                            <Route path='/' exact={true} component={NewProductPage}/>
+                            <Route path='/:category_id/category/' exact={true} component={DetailCategory}/>
                         </Switch>
                     </Col>
                 </Row>
