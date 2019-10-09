@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
-import {Button, Table, Modal, Input} from "antd";
+import {Button, Input, Modal, Table} from "antd";
 import {inject, observer} from "mobx-react";
 import {withRouter} from 'react-router-dom';
 import {toJS} from "mobx";
-import API from "../../../services/API";
 import axios from 'axios'
 
 const columns = [
@@ -65,7 +64,7 @@ class CategoryPage extends Component {
         return (
             <div>
                 <Button type="primary" onClick={this.showModal}>add</Button>
-                <Table dataSource={dataTable} columns={columns}/>
+                <Table dataSource={dataTable} columns={columns} rowKey={record => record.id}/>
 
                 <Modal
                     title="Title"

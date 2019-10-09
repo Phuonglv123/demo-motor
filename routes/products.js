@@ -52,7 +52,7 @@ let upload = multer(
 );
 
 // create product
-router.post('/create', upload.array('images', 5), passport.authenticate('jwt', {session: false}), (req, res) => {
+router.post('/create', upload.array('images', 5), (req, res) => {
     // return res.send(_.map(req.files, (image, index) => {return image.path}));
 
     const {errors, isValid} = validateProductInput(req.body, req.files);

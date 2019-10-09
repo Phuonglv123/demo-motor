@@ -6,7 +6,7 @@ import {Col, Row} from "antd";
 import NewProductPage from "./NewProductPage";
 import {createBrowserHistory} from "history";
 import DetailCategory from "./DetailCategory";
-import DetailPage from "../DetailPage";
+import DetailPage from "../DetailPage/DetailPage";
 
 const history = createBrowserHistory();
 
