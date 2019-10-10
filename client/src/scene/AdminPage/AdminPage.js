@@ -5,6 +5,7 @@ import CategoryPage from "./SubCategory/CategoryPage";
 import {createBrowserHistory} from "history";
 import {PrivateRoute} from "../../components/AppRoute/PrivateRoute";
 import ProductPage from "./SubCategory/ProductPage";
+import AddProduct from "./SubCategory/AddProduct";
 
 const {Header, Content, Footer, Sider} = Layout;
 
@@ -59,6 +60,7 @@ class AdminPage extends Component {
                                 <Switch>
                                     <PrivateRoute path='/admin/category/' exact={true} component={CategoryPage}/>
                                     <PrivateRoute path='/admin/product/' exact={true} component={ProductPage}/>
+                                    <PrivateRoute path="/admin/product/create" exact={true} component={AddProduct}/>
                                 </Switch>
                             </div>
                         </Content>
