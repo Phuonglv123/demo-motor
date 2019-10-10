@@ -20,7 +20,7 @@ class ProductPage extends Component {
             category: '',
             shipping: '',
             available: '',
-            images: __filename,
+            images: [],
             test: null
         }
     }
@@ -38,6 +38,14 @@ class ProductPage extends Component {
 
     handleOk = async () => {
         const {name, description, price, category, shipping, available, images} = this.state;
+        const dataForm = new FormData();
+        dataForm.append('name', name);
+        dataForm.append('description', description);
+        dataForm.append('price', price);
+        dataForm.append('category', category);
+        dataForm.append('shipping', shipping);
+        dataForm.append('available', available);
+        dataForm.append('images', images);
         const token = localStorage.getItem('AUTH');
         const res = await axios({
             method: 'POST',
@@ -46,17 +54,8 @@ class ProductPage extends Component {
                 Authorization: token,
                 'content-type': 'multipart/form-data'
             },
-            data: {
-                name: name,
-                description: description,
-                price: price,
-                category: category,
-                shipping: shipping,
-                available: available,
-                images: images
-            }
+            data: dataForm
         });
-        console.log(res)
         this.setState({
             visible: false,
         });
@@ -114,20 +113,20 @@ class ProductPage extends Component {
                     <div>
                         <Input onChange={(e) => {
                             this.setState({name: e.target.value})
-                        }} placeholder="Basic usage"/>
+                        }} placeholder="name product"/>
                     </div>
                     <div>
                         <Input onChange={(e) => {
                             this.setState({description: e.target.value})
-                        }} placeholder="Basic usage"/>
+                        }} placeholder="description"/>
                     </div>
                     <div>
                         <Input onChange={(e) => {
                             this.setState({price: e.target.value})
-                        }} placeholder="Basic usage"/>
+                        }} placeholder="Price"/>
                     </div>
                     <div>
-                        <Select placeholder='select' onChange={(e) => {
+                        <Select placeholder='select category' onChange={(e) => {
                             this.setState({category: e})
                         }} style={{width: '100%'}}>
                             {dataCategory.map((i, index) => (
@@ -148,6 +147,7 @@ class ProductPage extends Component {
                     <div>
                         <input className="fileInput"
                                type="file"
+                               multiple={true}
                                onChange={(e) => {
                                    this.setState({images: e.target.files[0]})
                                }}/>
