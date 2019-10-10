@@ -14,6 +14,7 @@ class AddProduct extends Component {
             category: '',
             shipping: '',
             available: '',
+            productDetail: '',
             images: [],
             test: null
         }
@@ -26,16 +27,18 @@ class AddProduct extends Component {
 
     onSubmit = async (e) => {
         e.preventDefault();
-        const {name, description, price, category, shipping, available, images} = this.state;
+        const {name, description, price, category, shipping, available, images, productDetail} = this.state;
         const dataForm = new FormData();
         dataForm.append('name', name);
         dataForm.append('description', description);
+        dataForm.append('productDetail', productDetail);
         dataForm.append('price', price);
         dataForm.append('category', category);
         dataForm.append('shipping', shipping);
         dataForm.append('available', available);
-        dataForm.append('images', images);
+        dataForm.append('images[]', images);
         const token = localStorage.getItem('AUTH');
+        debugger
         await axios({
             method: 'POST',
             url: '/api/products/create',
@@ -53,6 +56,7 @@ class AddProduct extends Component {
 
     render() {
         const dataCategory = toJS(this.props.BaseStore.AllCategory);
+        console.log(this.state.images)
         return (
             <div>
                 <form onSubmit={this.onSubmit}>
@@ -80,16 +84,31 @@ class AddProduct extends Component {
                         </select>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="exampleFormControlTextarea1">Example textarea</label>
+                        <label htmlFor="exampleFormControlTextarea1">product detail</label>
                         <textarea className="form-control" onChange={(e) => {
                             this.setState({description: e.target.value})
                         }} rows="3"/>
                     </div>
                     <div className="form-group">
+                        <label htmlFor="exampleFormControlTextarea1">Example textarea</label>
+                        <textarea className="form-control" onChange={(e) => {
+                            this.setState({productDetail: e.target.value})
+                        }} rows="3"/>
+                    </div>
+                    <div className="form-group">
                         <label htmlFor="exampleInputPassword1">Price</label>
-                        <input type="file" className="form-control" multiple={true}
+                        <input type="file" className="form-control" multiple
                                onChange={(e) => {
-                                   this.setState({images: e.target.files[0]})
+                                   let files = Array.from(e.target.files);
+                                   files.forEach((file) => {
+                                       let reader = new FileReader();
+                                       reader.onloadend = () => {
+                                           this.setState({
+                                               images: [...this.state.images, file]
+                                           })
+                                       };
+                                       reader.readAsDataURL(file)
+                                   });
                                }}/>
                     </div>
                     <div className="form-check">

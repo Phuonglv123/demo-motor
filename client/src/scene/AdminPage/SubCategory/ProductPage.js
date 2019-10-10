@@ -13,6 +13,7 @@ class ProductPage extends Component {
 
     render() {
         const dataTable = toJS(this.props.BaseStore.AllProduct);
+        console.log(dataTable)
         const columns = [
             {
                 title: 'Name',
