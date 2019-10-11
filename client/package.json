@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://http://18.189.16.125:3000",
+  "proxy": "http://localhost:5000",
   "dependencies": {
     "antd": "^3.23.6",
     "axios": "^0.19.0",

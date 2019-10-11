@@ -23,13 +23,13 @@ class DetailPage extends Component {
                             </div>
                             <div id="similar-product" className="carousel slide" data-ride="carousel">
                                 {/* Wrapper for slides */}
-                                <div className="carousel-inner">
-                                    <div className="item">
-                                        {detail && detail.images.map((i, index) => (
-                                            <a key={index}><img src={`http://localhost:3000/${i}`} alt=""/></a>
-                                        ))}
-                                    </div>
-                                </div>
+                                {/*<div className="carousel-inner">*/}
+                                {/*    <div className="item">*/}
+                                {/*        {detail && detail.images.map((i, index) => (*/}
+                                {/*            <a key={index}><img src={`http://localhost:3000/${i}`} alt=""/></a>*/}
+                                {/*        ))}*/}
+                                {/*    </div>*/}
+                                {/*</div>*/}
                                 {/* Controls */}
                                 <a className="left item-control" href="#similar-product" data-slide="prev">
                                     <i className="fa fa-angle-left"/>
