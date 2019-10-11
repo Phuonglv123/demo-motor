@@ -9,6 +9,7 @@ const path = require('path');
 
 app.use(express.static(path.join(__dirname, './public/uploads')));
 app.use('/public', express.static('public'));
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.use(cors()); // enabling all cors
 // app.use(function (req, res, next) {
