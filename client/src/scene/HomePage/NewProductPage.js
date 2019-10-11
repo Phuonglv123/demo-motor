@@ -1,42 +1,86 @@
 import React, {Component} from 'react';
-import {Col, Row} from "antd";
 import {inject, observer} from "mobx-react";
-import {withRouter, Link} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import {toJS} from "mobx";
-import {
-    Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button
-} from 'reactstrap';
 
 class NewProductPage extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            currentPage: 1,
+            todosPerPage: 8
+        };
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(event) {
+        this.setState({
+            currentPage: Number(event.target.id)
+        });
+    }
+
+
     async componentDidMount(): void {
         this.props.BaseStore.getAllProductStore();
     }
 
     render() {
         const dataProduct = toJS(this.props.BaseStore.AllProduct);
-        console.log(dataProduct)
-        return (
-            <div>
-                <Row>
-                    {dataProduct.map((i, index) => (
-                        <Col sm={3} key={index}>
-                            <Link to={`/detail/${i._id}`}>
-                                <Card>
-                                    <CardImg top width="100%" src={i.images[1]} alt="Card image cap"/>
-                                    <CardBody>
-                                        <CardTitle>Card title</CardTitle>
-                                        <CardSubtitle>Card subtitle</CardSubtitle>
-                                        <CardText>Some quick example text to build on the card title and make up the
-                                            bulk of the card's content.</CardText>
-                                        <Button>Button</Button>
-                                    </CardBody>
-                                </Card>
-                            </Link>
-                        </Col>
-                    ))}
+        const {currentPage, todosPerPage} = this.state;
 
-                </Row>
+        const indexOfLastTodo = currentPage * todosPerPage;
+        const indexOfFirstTodo = indexOfLastTodo - todosPerPage;
+        const currentTodos = dataProduct.slice(indexOfFirstTodo, indexOfLastTodo);
+        const renderTodos = currentTodos.map((i, index) => {
+            return <div className="col-sm-4" key={index}>
+                <div className="product-image-wrapper">
+                    <div className="single-products">
+                        <div className="productinfo text-center">
+                            <img src={i.images[0]} alt=""/>
+                            <h2>${i.price}</h2>
+                            <p>{i.name}</p>
+                            <a href="#" className="btn btn-default add-to-cart"><i
+                                className="fa fa-shopping-cart"></i>View detail</a>
+                        </div>
+                        <div className="product-overlay">
+                            <div className="overlay-content">
+                                <h2>$56</h2>
+                                <p>Easy Polo Black Edition</p>
+                                <a href="#" className="btn btn-default add-to-cart" onClick={() => {
+                                    this.props.history.push(`/detail/${i._id}`)
+                                }}><i
+                                    className="fa fa-shopping-cart"></i>View detail</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>;
+        });
+        const pageNumbers = [];
+        for (let i = 1; i <= Math.ceil(dataProduct.length / todosPerPage); i++) {
+            pageNumbers.push(i);
+        }
+
+        const renderPageNumbers = pageNumbers.map(number => {
+            return (
+                <li key={number} className="page-item">
+                    <a id={number} onClick={this.handleClick} className="page-link">{number}</a>
+                </li>
+            );
+        });
+        return (
+            <div className="features_items">
+                <h2 className="title text-center">Features Items</h2>
+                <div className="row">
+                    {renderTodos}
+                </div>
+                <div>
+                    <nav aria-label="Page navigation example">
+                        <ul className="pagination justify-content-center d-flex">
+                            {renderPageNumbers}
+                        </ul>
+                    </nav>
+                </div>
             </div>
         );
     }
