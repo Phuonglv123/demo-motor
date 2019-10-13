@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import MyHeader from "./MyHeader";
 import MyFooter from "./MyFooter";
-import './index.css';
+import './style.css';
+import './responsive.css';
 
 class MyLayout extends Component {
     render() {

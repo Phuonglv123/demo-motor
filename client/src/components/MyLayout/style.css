@@ -323,7 +323,15 @@ ul.sub-menu {
 *******Footer CSS******
 **************************/
 .footer {
+  padding: 30px;
   background-color: #016fb3;
+  text-align: left;
+}
+.footer h5 {
+  color: white;
+}
+.footer ul li {
+  color: white;
 }
 
 .video-gallery {

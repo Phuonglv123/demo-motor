@@ -32,25 +32,17 @@ class NewProductPage extends Component {
         const indexOfFirstTodo = indexOfLastTodo - todosPerPage;
         const currentTodos = dataProduct.slice(indexOfFirstTodo, indexOfLastTodo);
         const renderTodos = currentTodos.map((i, index) => {
-            return <div className="col-sm-4" key={index}>
+            return <div className="col-sm-4 hover-product" key={index}>
                 <div className="product-image-wrapper">
                     <div className="single-products">
                         <div className="productinfo text-center">
                             <img src={i.images[0]} alt=""/>
                             <h2>${i.price}</h2>
                             <p>{i.name}</p>
-                            <a href="#" className="btn btn-default add-to-cart"><i
+                            <a onClick={() => {
+                                this.props.history.push(`/detail/${i._id}`)
+                            }} className="btn btn-default add-to-cart"><i
                                 className="fa fa-shopping-cart"></i>View detail</a>
-                        </div>
-                        <div className="product-overlay">
-                            <div className="overlay-content">
-                                <h2>$56</h2>
-                                <p>Easy Polo Black Edition</p>
-                                <a href="#" className="btn btn-default add-to-cart" onClick={() => {
-                                    this.props.history.push(`/detail/${i._id}`)
-                                }}><i
-                                    className="fa fa-shopping-cart"></i>View detail</a>
-                            </div>
                         </div>
                     </div>
                 </div>
