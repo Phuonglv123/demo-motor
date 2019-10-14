@@ -1,133 +1,77 @@
 import React, {Component} from 'react';
+import {Link} from "react-router-dom";
 
 class MyFooter extends Component {
     render() {
         return (
-            <footer id="footer" className="footer color-bg">
-                <div className="footer-bottom">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-xs-12 col-sm-6 col-md-3">
-                                <div className="module-heading">
-                                    <h4 className="module-title">Contact Us</h4>
-                                </div>
-                                <div className="module-body">
-                                    <ul className="toggle-footer">
-                                        <li className="media">
-                                            <div className="pull-left">
-                                                <span className="icon fa-stack fa-lg">
-                                                  <i className="fa fa-map-marker fa-stack-1x fa-inverse"/>
-                                                </span>
-                                            </div>
-                                            <div className="media-body">
-                                                <p>ThemesGround, 789 Main rd, Anytown, CA 12345 USA</p>
-                                            </div>
-                                        </li>
-                                        <li className="media">
-                                            <div className="pull-left">
-                                                <span className="icon fa-stack fa-lg">
-                                                  <i className="fa fa-mobile fa-stack-1x fa-inverse"/>
-                                                </span>
-                                            </div>
-                                            <div className="media-body">
-                                                <p>+(888) 123-4567<br/>+(888) 456-7890</p>
-                                            </div>
-                                        </li>
-                                        <li className="media">
-                                            <div className="pull-left">
-                                                <span className="icon fa-stack fa-lg">
-                                                  <i className="fa fa-envelope fa-stack-1x fa-inverse"/>
-                                                </span>
-                                            </div>
-                                            <div className="media-body">
-                                                <span><a href="#">flipmart@themesground.com</a></span>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div className="col-xs-12 col-sm-6 col-md-3">
-                                <div className="module-heading">
-                                    <h4 className="module-title">Customer Service</h4>
-                                </div>
-                                <div className="module-body">
-                                    <ul className="list-unstyled">
-                                        <li className="first"><a href="#" title="Contact us">My Account</a></li>
-                                        <li><a href="#" title="About us">Order History</a></li>
-                                        <li><a href="#" title="faq">FAQ</a></li>
-                                        <li><a href="#" title="Popular Searches">Specials</a></li>
-                                        <li className="last"><a href="#" title="Where is my order?">Help Center</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div className="col-xs-12 col-sm-6 col-md-3">
-                                <div className="module-heading">
-                                    <h4 className="module-title">Corporation</h4>
-                                </div>
-                                <div className="module-body">
-                                    <ul className="list-unstyled">
-                                        <li className="first"><a title="Your Account" href="#">About us</a></li>
-                                        <li><a title="Information" href="#">Customer Service</a></li>
-                                        <li><a title="Addresses" href="#">Company</a></li>
-                                        <li><a title="Addresses" href="#">Investor Relations</a></li>
-                                        <li className="last"><a title="Orders History" href="#">Advanced Search</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div className="col-xs-12 col-sm-6 col-md-3">
-                                <div className="module-heading">
-                                    <h4 className="module-title">Why Choose Us</h4>
-                                </div>
-                                <div className="module-body">
-                                    <ul className="list-unstyled">
-                                        <li className="first"><a href="#" title="About us">Shopping Guide</a></li>
-                                        <li><a href="#" title="Blog">Blog</a></li>
-                                        <li><a href="#" title="Company">Company</a></li>
-                                        <li><a href="#" title="Investor Relations">Investor Relations</a></li>
-                                        <li className=" last"><a href="contact-us.html" title="Suppliers">Contact Us</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="copyright-bar">
-                    <div className="container">
-                        <div className="col-xs-12 col-sm-6 no-padding social">
-                            <ul className="link">
-                                <li className="fb pull-left"><a target="_blank" rel="nofollow" href="#"
-                                                                title="Facebook"/></li>
-                                <li className="tw pull-left"><a target="_blank" rel="nofollow" href="#"
-                                                                title="Twitter"/></li>
-                                <li className="googleplus pull-left"><a target="_blank" rel="nofollow" href="#"
-                                                                        title="GooglePlus"/>
-                                </li>
-                                <li className="rss pull-left"><a target="_blank" rel="nofollow" href="#" title="RSS"/>
-                                </li>
-                                <li className="pintrest pull-left"><a target="_blank" rel="nofollow" href="#"
-                                                                      title="PInterest"/>
-                                </li>
-                                <li className="linkedin pull-left"><a target="_blank" rel="nofollow" href="#"
-                                                                      title="Linkedin"/></li>
-                                <li className="youtube pull-left"><a target="_blank" rel="nofollow" href="#"
-                                                                     title="Youtube"/></li>
-                            </ul>
-                        </div>
-                        <div className="col-xs-12 col-sm-6 no-padding">
-                            <div className="clearfix payment-methods">
+            <div className='footer'>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-sm-3">
+                            <div>
                                 <ul>
-                                    <li><img src="assets/images/payments/1.png" alt=""/></li>
-                                    <li><img src="assets/images/payments/2.png" alt=""/></li>
-                                    <li><img src="assets/images/payments/3.png" alt=""/></li>
-                                    <li><img src="assets/images/payments/4.png" alt=""/></li>
-                                    <li><img src="assets/images/payments/5.png" alt=""/></li>
+                                    <li><h5>Tìm hiểu về sản phẩm</h5></li>
+                                    <li>Lorem ipsum dolor sit amet</li>
+                                    <li>Lorem ipsum dolor sit amet</li>
+                                    <li>Lorem ipsum dolor sit amet</li>
+                                    <li>Lorem ipsum dolor sit amet</li>
+                                    <li>Lorem ipsum dolor sit amet</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="col-sm-3">
+                            <div>
+                                <ul>
+                                    <li>
+                                        <h5>Chính sách và điều khoản</h5>
+                                    </li>
+                                    <li>
+                                        <Link to='/footer1/'>Điều khoản chung</Link></li>
+                                    <li>Chính sách bảo mật</li>
+                                    <li>Chính sách thanh toán</li>
+                                    <li>Chính sách giao hàng và dịch vụ</li>
+                                    <li>Chính sách bảo hành và đổi trả</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="col-sm-3">
+                            <div>
+                                <ul>
+                                    <li><h5>Kết nối với chúng tôi</h5></li>
+                                    <li><i className="fab fa-facebook-square"></i></li>
+                                    <li><i className="fas fa-phone-square-alt"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div className="col-sm-3">
+                            <div className='text-center'>
+                                <img src={require('../../res/img/logonhattrung.png')} alt=""
+                                     style={{width: '60px', filter: 'brightness(1000)'}}/>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li>CÔNG TY TNHH KỸ THUẬT - THƯƠNG MẠI NHẬT TRUNG</li>
+                                    <li><span>Địa chỉ:</span></li>
+                                    <li>
+                                        <span>Hotline:</span>
+                                        <a href="tel: 09765431">0987654321</a>
+                                    </li>
+                                    <li>
+                                        <span>Email:</span>
+                                        <a href="">support@nhattrungpump.com</a>
+                                    </li>
+                                    <li>
+                                        {/*<img*/}
+                                        {/*    src={require('../../res/img/logo-da-thong-bao-website-voi-bo-cong-thuong-600x228.png')}*/}
+                                        {/*    alt="" style={{width: '100px'}}/>*/}
+                                    </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-            </footer>
+            </div>
         );
     }
 }

@@ -21,7 +21,7 @@ class NewProductPage extends Component {
 
 
     async componentDidMount(): void {
-        this.props.BaseStore.getAllProductStore();
+        await this.props.BaseStore.getAllProductStore();
     }
 
     render() {
