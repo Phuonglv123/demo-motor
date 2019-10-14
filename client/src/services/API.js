@@ -3,8 +3,24 @@ import BaseAPI from "./BaseAPI";
 class API extends BaseAPI {
     async getAllCategory() {
         const res = await this.apiCall({
-            url: 'categories',
+            url: 'categories/get-all',
             method: 'GET'
+        });
+        return res.data;
+    }
+
+    async deleteCategoty(id) {
+        const res = await this.apiCall({
+            url: `categories/delete/${id}`,
+            method: 'POST'
+        });
+        return res;
+    }
+
+    async updateCategory(id){
+        const res = await this.apiCall({
+            url: `categories/update/${id}`,
+            method: 'POST'
         });
         return res;
     }

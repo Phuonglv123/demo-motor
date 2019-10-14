@@ -28,6 +28,10 @@ const productSchema = mongoose.Schema({
         ref: 'categories',
         required: true
     },
+    SubCategory: {
+        type: Schema.Types.ObjectId,
+        ref: 'subCategory',
+    },
     shipping: {
         required: true,
         type: Boolean

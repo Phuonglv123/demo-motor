@@ -4,19 +4,7 @@ import {inject, observer} from "mobx-react";
 import {withRouter} from 'react-router-dom';
 import {toJS} from "mobx";
 import axios from 'axios'
-
-const columns = [
-    {
-        title: 'Name',
-        dataIndex: 'name',
-        key: 'name',
-    },
-    {
-        title: 'Created At',
-        dataIndex: 'createdAt',
-        key: 'createdAt',
-    },
-];
+import API from "../../../services/API";
 
 class CategoryPage extends Component {
     constructor(props) {
@@ -52,15 +40,45 @@ class CategoryPage extends Component {
     };
 
     handleCancel = () => {
-        console.log('Clicked cancel button');
         this.setState({
             visible: false,
         });
     };
 
     render() {
+        const columns = [
+            {
+                title: 'Name',
+                dataIndex: 'name',
+                key: 'name',
+            },
+            {
+                title: 'Created At',
+                dataIndex: 'createdAt',
+                key: 'createdAt',
+            },
+            {
+                title: 'Actions',
+                key: 'actions',
+                render: (item) => (
+                    <div>
+                        <Button type="primary" icon="delete" size='default' onClick={async () => {
+                            console.log(item);
+                            debugger
+                            await API.deleteCategoty(item._id)
+                                .then(res => {
+                                    alert(res.message);
+                                    this.props.history.push('/admin')
+
+                                })
+                        }}/>
+                        <Button type="primary" icon="edit" size='default' className='ml-3'/>
+                    </div>
+                )
+            }
+        ];
         const dataTable = toJS(this.props.BaseStore.AllCategory);
-        const {visible, confirmLoading, ModalText} = this.state;
+        const {visible, confirmLoading} = this.state;
         return (
             <div>
                 <Button type="primary" onClick={this.showModal}>add</Button>

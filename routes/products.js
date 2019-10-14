@@ -19,14 +19,6 @@ let storage = multer.diskStorage({
     },
     filename: function (req, file, cb) {
         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
-        // if(!file.originalname.match(/\.(jpeg|jpg|png|JPEG|JPG|PNG)$/)){
-
-        //     var err = new Error();
-        //     err.code="filetype";
-        //     return cb(err);
-        // }else {
-        //     cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
-        // }
     }
 });
 
@@ -53,19 +45,10 @@ let upload = multer(
 
 // create product
 router.post('/create', upload.array('images', 5), (req, res) => {
-    // return res.send(_.map(req.files, (image, index) => {return image.path}));
-
     const {errors, isValid} = validateProductInput(req.body, req.files);
-
     if (!isValid) {
         return res.status(400).json(errors);
     }
-
-    // // image is requied
-    // upload((req, res, err) => {
-
-    // });
-
     const newProduct = new Product({
         ...req.body,
         images: _.map(req.files, (image, index) => image.path)
@@ -93,7 +76,7 @@ router.get('/', (req, res) => {
 router.get('/:product_id', (req, res) => {
     const errors = {};
     // Product
-    Product.findOne({_id: req.params.product_id})
+    Product.findOne({_id: req.params.id})
         .populate('category')
         .then(product => {
             if (!product) {
@@ -112,7 +95,7 @@ router.get('/:product_id', (req, res) => {
 router.get('/:category_id/category', (req, res) => {
     const errors = {};
     // Product
-    Product.find({"category": req.params.category_id})
+    Product.find({"category": req.params.id})
         .then((products) => {
             if (!products) {
                 errors.noproduct = 'There is no product with this category'
@@ -125,5 +108,10 @@ router.get('/:category_id/category', (req, res) => {
             return res.status(404).json(err)
         });
 });
+
+// //delete product
+// router.post('/delete/:id', (res, req, next) => {
+//
+// });
 
 module.exports = router;

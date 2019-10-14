@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 import {inject, observer} from 'mobx-react';
-import MyLayout from "../../components/MyLayout/MyLayout";
 
 class LoginPage extends Component {
     handleEmailChange = e => this.props.AuthStore.setUsername(e.target.value);
@@ -17,7 +16,7 @@ class LoginPage extends Component {
 
     render() {
         return (
-            <MyLayout>
+            <div className='container'>
                 <div className='row'>
                     <div className='col-md-6 login-form mx-auto'>
                         <h3>Login to example react mobx</h3>
@@ -52,8 +51,7 @@ class LoginPage extends Component {
                         </form>
                     </div>
                 </div>
-            </MyLayout>
-
+            </div>
         );
     }
 }

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Layout, Menu, Breadcrumb, Icon} from 'antd';
-import {Switch, Route, Router, Link} from 'react-router-dom';
+import {Switch, BrowserRouter as Router, Link} from 'react-router-dom';
 import CategoryPage from "./SubCategory/CategoryPage";
 import {createBrowserHistory} from "history";
 import {PrivateRoute} from "../../components/AppRoute/PrivateRoute";
@@ -34,13 +34,13 @@ class AdminPage extends Component {
                             <Menu.Item key="/admin/category/">
                                 <Link to='/admin/category/'>
                                     <Icon type="pie-chart"/>
-                                    <span>Option 1</span>
+                                    <span>Category</span>
                                 </Link>
                             </Menu.Item>
                             <Menu.Item key="2">
                                 <Link to='/admin/product/'>
                                     <Icon type="pie-chart"/>
-                                    <span>Option 1</span>
+                                    <span>Product</span>
                                 </Link>
                             </Menu.Item>
                             <Menu.Item key="9">

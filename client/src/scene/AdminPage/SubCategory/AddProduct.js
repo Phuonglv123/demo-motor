@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {toJS} from "mobx";
 import {inject, observer} from "mobx-react";
 import {withRouter} from 'react-router-dom';
-import axios from 'axios'
+import axios from 'axios';
+import RichTextEditor from 'react-rte';
 
 class AddProduct extends Component {
     constructor(props) {
@@ -85,9 +86,11 @@ class AddProduct extends Component {
                     </div>
                     <div className="form-group">
                         <label htmlFor="exampleFormControlTextarea1">product detail</label>
-                        <textarea className="form-control" onChange={(e) => {
-                            this.setState({description: e.target.value})
-                        }} rows="3"/>
+                        <RichTextEditor
+                            onChange={(e)=>{
+
+                            }}
+                        />
                     </div>
                     <div className="form-group">
                         <label htmlFor="exampleFormControlTextarea1">Example textarea</label>

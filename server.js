@@ -25,9 +25,9 @@ app.all('*', function (req, res, next) {
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     next();
 });
-
+// mongodb://nhattrung:0989744720p@ds061454.mlab.com:61454/shopnhattrung
 // connect to mongodb
-mongoose.connect('mongodb://nhattrung:0989744720p@ds061454.mlab.com:61454/shopnhattrung', {useNewUrlParser: true})
+mongoose.connect('mongodb://localhost:27017/shop', {useNewUrlParser: true})
     .then(() => console.log('DB Connected'))
     .catch(err => console.log(err));
 
@@ -46,10 +46,12 @@ require('./config/passport')(passport);
 const users = require('./routes/users');
 const categories = require('./routes/categories');
 const products = require('./routes/products');
+const subCategory = require('./routes/subCategories');
 
 // register routes
 app.use('/api/users', users);
 app.use('/api/categories', categories);
+app.use('/api/subCategories', subCategory);
 app.use('/api/products', products);
 
 const port = process.env.PORT || 5000;
