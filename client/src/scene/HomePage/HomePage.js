@@ -21,8 +21,8 @@ class HomePage extends Component {
     render() {
         const dataCate = toJS(this.props.BaseStore.AllCategory);
         return (
-            <MyLayout>
-                <Router history={history}>
+            <Router history={history}>
+                <MyLayout>
                     <section id="slider">
                         <div className="container">
                             <div id="demo" className="carousel slide" data-ride="carousel">
@@ -48,10 +48,10 @@ class HomePage extends Component {
                                 </div>
 
                                 <a className="carousel-control-prev" href="#demo" data-slide="prev">
-                                    <span className="carousel-control-prev-icon"></span>
+                                    <span className="carousel-control-prev-icon"/>
                                 </a>
                                 <a className="carousel-control-next" href="#demo" data-slide="next">
-                                    <span className="carousel-control-next-icon"></span>
+                                    <span className="carousel-control-next-icon"/>
                                 </a>
 
                             </div>
@@ -85,22 +85,14 @@ class HomePage extends Component {
                                             <h2>Brands</h2>
                                             <div className="brands-name">
                                                 <ul className="nav nav-pills nav-stacked">
-                                                    <li><a href="#"> <span className="pull-right">(50)</span>Acne</a>
-                                                    </li>
-                                                    <li><a href="#"> <span className="pull-right">(56)</span>Grüne Erde</a>
-                                                    </li>
-                                                    <li><a href="#"> <span className="pull-right">(27)</span>Albiro</a>
-                                                    </li>
-                                                    <li><a href="#"> <span className="pull-right">(32)</span>Ronhill</a>
-                                                    </li>
-                                                    <li><a href="#"> <span className="pull-right">(5)</span>Oddmolly</a>
-                                                    </li>
-                                                    <li><a href="#"> <span
-                                                        className="pull-right">(9)</span>Boudestijn</a>
-                                                    </li>
-                                                    <li><a href="#"> <span className="pull-right">(4)</span>Rösch
-                                                        creative
-                                                        culture</a></li>
+                                                    <li>Example Brand</li>
+                                                    <li>Example Brand</li>
+                                                    <li>Example Brand</li>
+                                                    <li>Example Brand</li>
+                                                    <li>Example Brand</li>
+                                                    <li>Example Brand</li>
+                                                    <li>Example Brand</li>
+                                                    <li>Example Brand</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -127,14 +119,14 @@ class HomePage extends Component {
                                         <Route path='/' exact={true} component={ProductSpecail}/>
                                         <Route path='/:category_id/category/' exact={true} component={DetailCategory}/>
                                         <Route path='/detail/:id' exact={true} component={DetailPage}/>
-                                        <Route path='/footer1/' exact={true} component={FooterScene1}/>
+                                        <Route path='/footer1' exact={true} component={FooterScene1}/>
                                     </Switch>
                                 </div>
                             </div>
                         </div>
                     </section>
-                </Router>
-            </MyLayout>
+                </MyLayout>
+            </Router>
         );
     }
 }

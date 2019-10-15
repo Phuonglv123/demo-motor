@@ -17,9 +17,17 @@ class API extends BaseAPI {
         return res;
     }
 
-    async updateCategory(id){
+    async updateCategory(id) {
         const res = await this.apiCall({
             url: `categories/update/${id}`,
+            method: 'POST'
+        });
+        return res;
+    }
+
+    async CreateSubCat() {
+        const res = await this.apiCall({
+            url: 'subCategories/create',
             method: 'POST'
         });
         return res;

@@ -39,17 +39,16 @@ class NewProductPage extends Component {
                             <img src={i.images[0]} alt=""/>
                             <h2>${i.price}</h2>
                             <p>{i.name}</p>
-                            <a href="#" className="btn btn-default add-to-cart"><i
-                                className="fa fa-shopping-cart"></i>View detail</a>
+                            <button className="btn btn-default add-to-cart"><i
+                                className="fa fa-shopping-cart"/>View detail</button>
                         </div>
                         <div className="product-overlay">
                             <div className="overlay-content">
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
-                                <a href="#" className="btn btn-default add-to-cart" onClick={() => {
+                                <button className="btn btn-default add-to-cart" onClick={() => {
                                     this.props.history.push(`/detail/${i._id}`)
-                                }}><i
-                                    className="fa fa-shopping-cart"></i>View detail</a>
+                                }}><i className="fa fa-shopping-cart"/>View detail</button>
                             </div>
                         </div>
                     </div>

@@ -82,6 +82,7 @@ class CategoryPage extends Component {
         return (
             <div>
                 <Button type="primary" onClick={this.showModal}>add</Button>
+                <Button type="primary" onClick={this.showModal}>Create subCategory</Button>
                 <Table dataSource={dataTable} columns={columns} rowKey={record => record.id}/>
 
                 <Modal

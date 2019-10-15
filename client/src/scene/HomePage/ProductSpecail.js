@@ -32,10 +32,11 @@ class ProductSpecail extends Component {
                                             <img src={i.images[0]} alt=""/>
                                             <h2>${i.price}</h2>
                                             <p>{i.name}</p>
-                                            <a onClick={() => {
+                                            <button onClick={() => {
                                                 this.props.history.push(`/detail/${i._id}`)
                                             }} className="btn btn-default add-to-cart"><i
-                                                className="fa fa-shopping-cart"></i>View detail</a>
+                                                className="fa fa-shopping-cart"/>View detail
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -55,10 +56,11 @@ class ProductSpecail extends Component {
                                             <img src={i.images[0]} alt=""/>
                                             <h2>${i.price}</h2>
                                             <p>{i.name}</p>
-                                            <a onClick={() => {
+                                            <button onClick={() => {
                                                 this.props.history.push(`/detail/${i._id}`)
                                             }} className="btn btn-default add-to-cart"><i
-                                                className="fa fa-shopping-cart"></i>View detail</a>
+                                                className="fa fa-shopping-cart"/>View detail
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -78,10 +80,11 @@ class ProductSpecail extends Component {
                                             <img src={i.images[0]} alt=""/>
                                             <h2>${i.price}</h2>
                                             <p>{i.name}</p>
-                                            <a onClick={() => {
+                                            <button onClick={() => {
                                                 this.props.history.push(`/detail/${i._id}`)
-                                            }} className="btn btn-default add-to-cart"><i
-                                                className="fa fa-shopping-cart"></i>View detail</a>
+                                            }} className="btn btn-default add-to-cart">
+                                                <i className="fa fa-shopping-cart"/>View detail
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
