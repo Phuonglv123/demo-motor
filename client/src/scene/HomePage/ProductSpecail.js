@@ -3,11 +3,25 @@ import {inject, observer} from "mobx-react";
 import {withRouter} from 'react-router-dom';
 import {toJS} from "mobx";
 import Slider from "react-slick";
+import API from "../../services/API";
 
 class ProductSpecail extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            topProduct: [],
+            centerProduct: [],
+            bottomProduct: []
+        }
+    }
+
 
     async componentDidMount(): void {
         await this.props.BaseStore.getAllProductStore();
+        const topProduct = await API.ListTopProduct();
+        this.setState({
+            topProduct: topProduct,
+        })
     }
 
     render() {
@@ -24,7 +38,7 @@ class ProductSpecail extends Component {
                 <div className="features_items">
                     <h2 className="title text-center">Top Items</h2>
                     <Slider {...settings}>
-                        {dataProduct.map((i, index) => (
+                        {this.state.topProduct.map((i, index) => (
                             <div className="hover-product" key={index}>
                                 <div className="product-image-wrapper">
                                     <div className="single-products">

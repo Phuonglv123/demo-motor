@@ -10,7 +10,7 @@ class MyFooter extends Component {
                         <div className="col-sm-3">
                             <div>
                                 <ul>
-                                    <li><h5>Tìm hiểu về sản phẩm</h5></li>
+                                    <li><h6>Tìm hiểu về sản phẩm</h6></li>
                                     <li>Lorem ipsum dolor sit amet</li>
                                     <li>Lorem ipsum dolor sit amet</li>
                                     <li>Lorem ipsum dolor sit amet</li>
@@ -23,21 +23,31 @@ class MyFooter extends Component {
                             <div>
                                 <ul>
                                     <li>
-                                        <h5>Chính sách và điều khoản</h5>
+                                        <h6>Chính sách và điều khoản</h6>
                                     </li>
                                     <li>
-                                        <Link to='/footer1/'>Điều khoản chung</Link></li>
-                                    <li>Chính sách bảo mật</li>
-                                    <li>Chính sách thanh toán</li>
-                                    <li>Chính sách giao hàng và dịch vụ</li>
-                                    <li>Chính sách bảo hành và đổi trả</li>
+                                        <Link to='/dieu-khoan-chung/'>Điều khoản chung</Link></li>
+                                    <li>
+                                        <Link to='/chinh-sach-bao-mat'>Chính sách bảo mật</Link>
+                                    </li>
+                                    <li>
+                                        <Link to='/chinh-sach-thanh-toan'>Chính sách thanh toán</Link>
+                                    </li>
+                                    <li>
+                                        <Link to='/chinh-sach-giao-hang-va-dich-vu'>
+                                            Chính sách giao hàng và dịch vụ
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link to='/chinh-sach-bao-hanh-va-doi-tra'>Chính sách bảo hành và đổi trả</Link>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
                         <div className="col-sm-3">
                             <div>
                                 <ul>
-                                    <li><h5>Kết nối với chúng tôi</h5></li>
+                                    <li><h6>Kết nối với chúng tôi</h6></li>
                                     <li><i className="fab fa-facebook-square"></i></li>
                                     <li><i className="fas fa-phone-square-alt"></i></li>
                                 </ul>
@@ -46,8 +56,8 @@ class MyFooter extends Component {
 
                         <div className="col-sm-3">
                             <div className='text-center'>
-                                <img src={require('../../res/img/logonhattrung.png')} alt=""
-                                     style={{width: '60px', filter: 'brightness(1000)'}}/>
+                                <img src={require('../../res/img/logonhattrungwhite.png')} alt=""
+                                     style={{width: '85px'}}/>
                             </div>
                             <div>
                                 <ul>

@@ -333,10 +333,13 @@ ul.sub-menu {
   background-color: #016fb3;
   text-align: left;
 }
-.footer h5 {
+.footer h6 {
   color: white;
 }
 .footer ul li {
+  color: white;
+}
+.footer ul li a {
   color: white;
 }
 
@@ -835,7 +838,8 @@ h2.title {
 }
 
 .productinfo img {
-  width: 100%;
+  width: 65%;
+  margin: 0 auto;
 }
 
 .productinfo {

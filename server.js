@@ -27,7 +27,7 @@ app.all('*', function (req, res, next) {
 });
 // mongodb://nhattrung:0989744720p@ds061454.mlab.com:61454/shopnhattrung
 // connect to mongodb
-mongoose.connect('mongodb://localhost:27017/shop', {useNewUrlParser: true})
+mongoose.connect('mongodb://nhattrung:0989744720p@ds061454.mlab.com:61454/shopnhattrung', {useNewUrlParser: true})
     .then(() => console.log('DB Connected'))
     .catch(err => console.log(err));
 
@@ -46,6 +46,9 @@ require('./config/passport')(passport);
 const users = require('./routes/users');
 const categories = require('./routes/categories');
 const products = require('./routes/products');
+const TopProroducts = require('./routes/topProduct');
+const CenterProducts = require('./routes/centerProduct');
+const BottomProduct = require('./routes/bottomProduct');
 const subCategory = require('./routes/subCategories');
 
 // register routes
@@ -53,6 +56,9 @@ app.use('/api/users', users);
 app.use('/api/categories', categories);
 app.use('/api/subCategories', subCategory);
 app.use('/api/products', products);
+app.use('/api/top-products', TopProroducts);
+app.use('/api/bottom-products', BottomProduct);
+app.use('/api/center-products', CenterProducts);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {

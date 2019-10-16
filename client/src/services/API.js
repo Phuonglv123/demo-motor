@@ -75,6 +75,32 @@ class API extends BaseAPI {
     //     debugger;
     //     return res;
     // }
+
+    //top Product
+
+    async ListTopProduct() {
+        const res = await this.apiCall({
+            url: 'top-products/get-all',
+            method: 'GET'
+        });
+        return res;
+    }
+
+    async ListCenterProduct() {
+        const res = await this.apiCall({
+            url: 'center-products/get-all',
+            method: 'GET'
+        });
+        return res;
+    }
+
+    async ListBottomProduct() {
+        const res = await this.apiCall({
+            url: 'bottom-products/get-all',
+            method: 'GET'
+        });
+        return res;
+    }
 }
 
 export default new API();

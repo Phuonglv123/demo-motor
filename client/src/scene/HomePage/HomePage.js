@@ -9,6 +9,8 @@ import DetailPage from "../DetailPage/DetailPage";
 import MyLayout from "../../components/MyLayout/MyLayout";
 import ProductSpecail from "./ProductSpecail";
 import FooterScene1 from "../FooterScene/FooterScene1";
+import FooterScene2 from "../FooterScene/FooterScene2";
+import FooterScene3 from "../FooterScene/FooterScene3";
 
 const history = createBrowserHistory();
 
@@ -119,7 +121,11 @@ class HomePage extends Component {
                                         <Route path='/' exact={true} component={ProductSpecail}/>
                                         <Route path='/:category_id/category/' exact={true} component={DetailCategory}/>
                                         <Route path='/detail/:id' exact={true} component={DetailPage}/>
-                                        <Route path='/footer1' exact={true} component={FooterScene1}/>
+                                        <Route path='/dieu-khoan-chung' exact={true} component={FooterScene1}/>
+                                        <Route path='/chinh-sach-bao-mat' exact={true} component={FooterScene2}/>
+                                        <Route path='/chinh-sach-thanh-toan' exact={true} component={FooterScene3}/>
+                                        <Route path='/chinh-sach-giao-hang-va-dich-vu' exact={true} component={FooterScene3}/>
+                                        <Route path='/chinh-sach-bao-hanh-va-doi-tra' exact={true} component={FooterScene3}/>
                                     </Switch>
                                 </div>
                             </div>
