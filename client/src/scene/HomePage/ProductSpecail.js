@@ -19,8 +19,12 @@ class ProductSpecail extends Component {
     async componentDidMount(): void {
         await this.props.BaseStore.getAllProductStore();
         const topProduct = await API.ListTopProduct();
+        const centerProduct = await API.ListCenterProduct();
+        const bottomProduct = await API.ListBottomProduct();
         this.setState({
             topProduct: topProduct,
+            centerProduct: centerProduct,
+            bottomProduct: bottomProduct,
         })
     }
 
@@ -52,7 +56,7 @@ class ProductSpecail extends Component {
                                                 className="fa fa-shopping-cart"/>View detail
                                             </button>
                                         </div>
-                                    </div>
+                                </div>
                                 </div>
                             </div>
                         ))}
@@ -62,7 +66,7 @@ class ProductSpecail extends Component {
                 <div className="features_items">
                     <h2 className="title text-center">Center Items</h2>
                     <Slider {...settings}>
-                        {dataProduct.map((i, index) => (
+                        {this.state.centerProduct.map((i, index) => (
                             <div className="hover-product" key={index}>
                                 <div className="product-image-wrapper">
                                     <div className="single-products">
@@ -86,7 +90,7 @@ class ProductSpecail extends Component {
                 <div className="features_items">
                     <h2 className="title text-center">Top Items</h2>
                     <Slider {...settings}>
-                        {dataProduct.map((i, index) => (
+                        {this.state.bottomProduct.map((i, index) => (
                             <div className="hover-product" key={index}>
                                 <div className="product-image-wrapper">
                                     <div className="single-products">

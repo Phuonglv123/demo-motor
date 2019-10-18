@@ -5,7 +5,6 @@ import {toJS} from "mobx";
 class DetailCategory extends Component {
     async componentDidMount(): void {
         const id = this.props.match.params.category_id;
-        console.log(id)
         await this.props.BaseStore.getDetailCategory(id)
     }
 

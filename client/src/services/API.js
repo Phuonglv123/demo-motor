@@ -86,6 +86,15 @@ class API extends BaseAPI {
         return res;
     }
 
+    async TopProductDetail(id) {
+        const res = await this.apiCall({
+            url: `top-products/${id}`,
+            method: 'GET'
+        });
+
+        return res
+    }
+
     async ListCenterProduct() {
         const res = await this.apiCall({
             url: 'center-products/get-all',
@@ -94,12 +103,28 @@ class API extends BaseAPI {
         return res;
     }
 
+    async CenterProductDetail(id) {
+        const res = await this.apiCall({
+            url: `center-products/${id}`,
+            method: 'GET'
+        });
+        return res
+    }
+
     async ListBottomProduct() {
         const res = await this.apiCall({
             url: 'bottom-products/get-all',
             method: 'GET'
         });
         return res;
+    }
+
+    async BottomProductDetail(id) {
+        const res = await this.apiCall({
+            url: `bottom-products/${id}`,
+            method: 'GET'
+        });
+        return res
     }
 }
 
