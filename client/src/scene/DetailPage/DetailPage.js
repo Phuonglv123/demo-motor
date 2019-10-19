@@ -10,11 +10,10 @@ class DetailPage extends Component {
     }
 
     render() {
-        console.log(toJS(this.props.BaseStore.DetailProduct));
         const detail = toJS(this.props.BaseStore.DetailProduct);
         return (
             <div>
-                <div className="product-details">{/*product-details*/}
+                <div className="product-details">
                     <div className="row">
                         <div className="col-sm-5">
                             <div className="view-product">
@@ -23,13 +22,13 @@ class DetailPage extends Component {
                             </div>
                             <div id="similar-product" className="carousel slide" data-ride="carousel">
                                 {/* Wrapper for slides */}
-                                {/*<div className="carousel-inner">*/}
-                                {/*    <div className="item">*/}
-                                {/*        {detail && detail.images.map((i, index) => (*/}
-                                {/*            <a key={index}><img src={`http://localhost:3000/${i}`} alt=""/></a>*/}
-                                {/*        ))}*/}
-                                {/*    </div>*/}
-                                {/*</div>*/}
+                                <div className="carousel-inner">
+                                    <div className="item">
+                                        {detail && detail.images.map((i, index) => (
+                                            <img key={index} src={`http://localhost:3000/${i}`} alt=""/>
+                                        ))}
+                                    </div>
+                                </div>
                                 {/* Controls */}
                                 <a className="left item-control" href="#similar-product" data-slide="prev">
                                     <i className="fa fa-angle-left"/>

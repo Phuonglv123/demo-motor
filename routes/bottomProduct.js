@@ -45,10 +45,6 @@ let upload = multer(
 
 // create product
 router.post('/create', upload.array('images', 5), (req, res) => {
-    const {errors, isValid} = validateProductInput(req.body, req.files);
-    if (!isValid) {
-        return res.status(400).json(errors);
-    }
     const newProduct = new BottomProduct({
         ...req.body,
         images: _.map(req.files, (image, index) => image.path)

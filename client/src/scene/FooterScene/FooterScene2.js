@@ -16,6 +16,7 @@ class FooterScene2 extends Component {
                         </span>
                     </div>
                 </div>
+                <br/>
                 <div>
                     <h3>NỘI DUNG CHÍNH SÁCH BẢO MẬT THÔNG TIN</h3>
                 </div>
@@ -29,6 +30,7 @@ class FooterScene2 extends Component {
                         <span>Chúng tôi bảo lưu quyền sửa đổi, bổ sung nhằm hoàn thiện đối với Chính Sách này vào bất kỳ thời điểm nào. Chúng tôi khuyến khích bạn thường xuyên xem lại Chính Sách Bảo Mật Thông Tin Cá Nhân này để có được những cập nhật mới nhất đảm bảo bạn biết và thực hiện quyền quản lý thông tin cá nhân của bạn.</span>
                     </div>
                 </div>
+                <br/>
                 <div>
                     <h6>2. Mục đích sử dụng thông tin khách hàng:</h6>
                     <div>
@@ -46,6 +48,7 @@ class FooterScene2 extends Component {
                         </ul>
                     </div>
                 </div>
+                <br/>
                 <div>
                     <h6>4. Thời gian lưu trữ thông tin</h6>
                     <div>
@@ -65,12 +68,14 @@ class FooterScene2 extends Component {
                         <span>Ban quản trị cam kết sẽ phản hồi ngay lập tức hoặc muộn nhất là trong vòng 72 giờ làm việc kể từ thời điểm nhận được khiếu nại.</span>
                     </div>
                 </div>
+                <br/>
                 <div>
                     <h6>6. Liên kết với các website khác</h6>
                     <div>
                         <span>Xin lưu ý rằng website của chúng tôi liên kết với các website khác và chính sách bảo mật của các website này có thể khác với chúng tôi. Chúng tôi khuyến cáo khách hàng nên kiểm tra chính sách bảo mật của các website này trước khi cung cấp bất kỳ thông tin cá nhân nào. Trong bất kỳ trường hợp nào, xin lưu ý rằng các website này không chia sẻ thông tin của khách hàng với chúng tôi.</span>
                     </div>
                 </div>
+                <br/>
                 <div>
                     <h6>7. Địa chỉ của đơn vị thu thập và quản lý thông tin:</h6>
                     <div>

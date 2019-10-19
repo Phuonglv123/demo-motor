@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {inject, observer} from "mobx-react";
 import {Link, Route, Router, Switch, withRouter} from 'react-router-dom';
 import {toJS} from "mobx";
-import NewProductPage from "./NewProductPage";
 import {createBrowserHistory} from "history";
 import DetailCategory from "./DetailCategory";
 import DetailPage from "../DetailPage/DetailPage";
@@ -22,6 +21,7 @@ class HomePage extends Component {
 
     render() {
         const dataCate = toJS(this.props.BaseStore.AllCategory);
+        console.log(dataCate)
         return (
             <Router history={history}>
                 <MyLayout>
@@ -98,21 +98,6 @@ class HomePage extends Component {
                                                 </ul>
                                             </div>
                                         </div>
-
-                                        <div className="price-range">
-                                            <h2>Price Range</h2>
-                                            <div className="well text-center">
-                                                <input type="text" className="span2" value="" data-slider-min="0"
-                                                       data-slider-max="600" data-slider-step="5"
-                                                       data-slider-value="[250,450]" id="sl2"/><br/>
-                                                <b className="pull-left">$ 0</b> <b className="pull-right">$ 600</b>
-                                            </div>
-                                        </div>
-
-                                        <div className="shipping text-center">
-                                            <img src="images/home/shipping.jpg" alt=""/>
-                                        </div>
-
                                     </div>
                                 </div>
 

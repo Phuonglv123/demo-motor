@@ -10,6 +10,7 @@ class FooterScene1 extends Component {
                 <div>
                     <span>Bằng việc sử dụng thông tin được công bố trên trang web nhattrungteach.com.vn là bạn đã đồng ý với các điều kiện sau và cam kết thực hiện các chuẩn mực về giao tiếp trên mạng Internet:</span>
                 </div>
+                <br/>
                 <div>
                     <h6>1. Sử dụng và sao chép nội dung trên website nhattrungtech.com</h6>
                     <div>
@@ -22,12 +23,14 @@ class FooterScene1 extends Component {
                         <span>c)  Việc tái sử dụng, truyền tải (bằng thư điện tử hoặc các ấn phẩm trên mạng Internet), sửa đổi cho mục đích thương mại, từng phần hoặc toàn bộ đều bị cấm nếu không được sự đồng ý bằng văn bản hoặc email chính thức của đơn vị chủ quản là Công ty TNHH Kỹ Thuật Thương Mại Thái Khương.</span>
                     </div>
                 </div>
+                <br/>
                 <div>
                     <h6>2. Không chào giá</h6>
                     <div>
                         <span>Các thông tin được công bố trên thaikhuongpump.com nhằm cung cấp cho độc giả tin tức, các sự kiện cập nhật về kiến thức, công nghệ, sản phẩm trong ngành bơm. Đây là tin tức khách quan và chỉ có tính chất mô tả.</span>
                     </div>
                 </div>
+                <br/>
                 <div>
                     <h6>3. Không cam kết</h6>
                     <div>
@@ -38,12 +41,14 @@ class FooterScene1 extends Component {
                         <span>Công ty TNHH Kỹ Thuật Thương Mại Thái Khương không chịu trách nhiệm về các thông tin và quan điểm xuất hiện trên các trang web của chúng tôi, vì mọi nội dung trên website mà chúng tôi đăng tải đều không thể hiện ý chí, thái độ về các chính sách tôn giáo, chính trị cũng như các hoạt động có liên quan.</span>
                     </div>
                 </div>
+                <br/>
                 <div>
                     <h6>4. Liên kết với các website khác</h6>
                     <div>
                         <span>Xin lưu ý rằng website của chúng tôi liên kết với các website khác và chính sách bảo mật của các website này có thể khác với chúng tôi. Chúng tôi khuyến cáo khách hàng nên kiểm tra chính sách bảo mật của các website này trước khi cung cấp bất kỳ thông tin cá nhân nào. Trong bất kỳ trường hợp nào, xin lưu ý rằng các website này không chia sẻ thông tin của khách hàng với chúng tôi.</span>
                     </div>
                 </div>
+                <br/>
                 <div>
                     <h6>5. Thay đổi chính sách & điều khoản điều kiện</h6>
                     <div>

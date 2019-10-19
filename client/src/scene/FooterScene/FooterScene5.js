@@ -10,6 +10,7 @@ class FooterScene5 extends Component {
                 <div>
                     <h3>A. CHÍNH SÁCH BẢO HÀNH</h3>
                 </div>
+                <br/>
                 <div>
                     <h6>1. Điều kiện đổi/trả sản phẩm:</h6>
                     <div>
@@ -24,6 +25,7 @@ class FooterScene5 extends Component {
                         </ul>
                     </div>
                 </div>
+                <br/>
                 <div>
                     <h6>2. Điều kiện bảo hành – sửa chữa – thay thế miễn phí 100%:</h6>
                     <div>
@@ -39,6 +41,7 @@ class FooterScene5 extends Component {
                         </ul>
                     </div>
                 </div>
+                <br/>
                 <div>
                     <h6>3. Điều kiện bảo hành – sửa chữa – thay thế có phát sinh phí:</h6>
                     <div>
@@ -56,6 +59,7 @@ class FooterScene5 extends Component {
                         </ul>
                     </div>
                 </div>
+                <br/>
                 <div>
                     <h3>B. TIÊU CHUẨN BẢO HÀNH</h3>
                 </div>

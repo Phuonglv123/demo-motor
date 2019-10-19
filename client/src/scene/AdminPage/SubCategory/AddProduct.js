@@ -28,11 +28,10 @@ class AddProduct extends Component {
 
     onSubmit = async (e) => {
         e.preventDefault();
-        const {name, description, price, category, shipping, available, images, productDetail} = this.state;
+        const {name, description, price, category, shipping, available, images} = this.state;
         const dataForm = new FormData();
         dataForm.append('name', name);
         dataForm.append('description', description);
-        dataForm.append('productDetail', productDetail);
         dataForm.append('price', price);
         dataForm.append('category', category);
         dataForm.append('shipping', shipping);
@@ -57,7 +56,7 @@ class AddProduct extends Component {
 
     render() {
         const dataCategory = toJS(this.props.BaseStore.AllCategory);
-        console.log(this.state.images)
+        console.log(dataCategory)
         return (
             <div>
                 <form onSubmit={this.onSubmit}>
@@ -85,17 +84,9 @@ class AddProduct extends Component {
                         </select>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="exampleFormControlTextarea1">product detail</label>
-                        <RichTextEditor
-                            onChange={(e)=>{
-
-                            }}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="exampleFormControlTextarea1">Example textarea</label>
+                        <label htmlFor="exampleFormControlTextarea1">Description</label>
                         <textarea className="form-control" onChange={(e) => {
-                            this.setState({productDetail: e.target.value})
+                            this.setState({description: e.target.value})
                         }} rows="3"/>
                     </div>
                     <div className="form-group">

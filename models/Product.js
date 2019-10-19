@@ -13,11 +13,6 @@ const productSchema = mongoose.Schema({
         type: String,
         maxlength: 100000
     },
-    productDetail: {
-        required: true,
-        type: String,
-        maxlength: 200000
-    },
     price: {
         required: true,
         type: Number,
@@ -27,10 +22,6 @@ const productSchema = mongoose.Schema({
         type: Schema.Types.ObjectId,
         ref: 'categories',
         required: true
-    },
-    SubCategory: {
-        type: Schema.Types.ObjectId,
-        ref: 'subCategory',
     },
     shipping: {
         required: true,

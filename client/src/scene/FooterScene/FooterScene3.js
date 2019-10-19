@@ -25,11 +25,13 @@ class FooterScene3 extends Component {
                         <span>Ngoài ra, quý khách không phải chịu bất kì khoản phí nào khác.</span>
                     </div>
                 </div>
+                <br/>
                 <div>
                     <h6>2. Thanh toán bằng chuyển khoản ngân hàng</h6>
                     <div>
                         <h6>Thông tin thanh toán:</h6>
                     </div>
+                    <br/>
                     <div>
                         <h6>CÔNG TY TNHH KỸ THUẬT THƯƠNG MẠI THÁI KHƯƠNG</h6>
                     </div>

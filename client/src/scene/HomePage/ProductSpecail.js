@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {inject, observer} from "mobx-react";
 import {withRouter} from 'react-router-dom';
-import {toJS} from "mobx";
 import Slider from "react-slick";
 import API from "../../services/API";
 
@@ -17,7 +16,6 @@ class ProductSpecail extends Component {
 
 
     async componentDidMount(): void {
-        await this.props.BaseStore.getAllProductStore();
         const topProduct = await API.ListTopProduct();
         const centerProduct = await API.ListCenterProduct();
         const bottomProduct = await API.ListBottomProduct();
@@ -29,7 +27,6 @@ class ProductSpecail extends Component {
     }
 
     render() {
-        const dataProduct = toJS(this.props.BaseStore.AllProduct);
         const settings = {
             dots: true,
             infinite: true,
@@ -56,7 +53,7 @@ class ProductSpecail extends Component {
                                                 className="fa fa-shopping-cart"/>View detail
                                             </button>
                                         </div>
-                                </div>
+                                    </div>
                                 </div>
                             </div>
                         ))}

@@ -10,6 +10,7 @@ class FooterScene4 extends Component {
                 <div>
                     <h3>A. CHÍNH SÁCH GIAO HÀNG</h3>
                 </div>
+                <br/>
                 <div>
                     <h6>1. Giao hàng</h6>
                     <div>
@@ -28,6 +29,7 @@ class FooterScene4 extends Component {
                         <span>Thời gian giao hàng còn tùy thuộc vào loại sản phẩm và yêu cầu của quý khách. Chi tiết sẽ được liệt kê trong hợp đồng.</span>
                     </div>
                 </div>
+                <br/>
                 <div>
                     <h6>2. Cam kết giao hàng:</h6>
                     <div>
@@ -40,6 +42,7 @@ class FooterScene4 extends Component {
                         </ul>
                     </div>
                 </div>
+                <br/>
                 <div>
                     <h3>B. CHÍNH SÁCH DỊCH VỤ</h3>
                     <div>
